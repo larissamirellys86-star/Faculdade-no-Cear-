@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculdades de Biologia no Ceará</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+    body {background-color:#e6f4ea; color:#1b5e20; line-height:1.6;}
+    header {background:#2e7d32; color:white; padding:20px; text-align:center; position:sticky; top:0; z-index:100;}
+    header nav ul {display:flex; justify-content:center; list-style:none;}
+    header nav ul li {margin:0 15px;}
+    header nav ul li a {color:white; text-decoration:none; font-weight:bold; transition:0.3s;}
+    header nav ul li a:hover {opacity:0.8;}
+
+    section {padding:40px 20px; max-width:900px; margin:auto;}
+    h2 {color:#2e7d32; margin-bottom:15px;}
+    
+    .carousel {position:relative; width:100%; max-width:600px; margin:auto; overflow:hidden; border-radius:10px; height:300px;}
+    .carousel img {
+      width:100%;
+      height:100%;
+      display:none;
+      object-fit: contain;
+      background-color: #e6f4ea;
+    }
+    .carousel img.active {display:block;}
+    .prev, .next {position:absolute; top:50%; transform:translateY(-50%); background:#2e7d32; color:white; border:none; padding:10px; cursor:pointer; border-radius:50%;}
+    .prev {left:10px;} .next {right:10px;}
+    
+    .curiosidade-box {background:#a5d6a7; padding:15px; border-radius:10px; margin-top:15px;}
+    .curiosidade-box p {margin-bottom:10px;}
+    .curiosidade-box a {color:#1b5e20; text-decoration:none; font-weight:bold;}
+    .curiosidade-box a:hover {text-decoration:underline;}
+    
+    .info-secao {display:none; background:#c8e6c9; padding:15px; border-radius:10px; margin-top:10px;}
+    .info-secao.active {display:block;}
+    .info-secao button {margin-top:10px; background:#2e7d32; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;}
+    
+    footer {background:#2e7d32; color:white; text-align:center; padding:15px; margin-top:40px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Faculdades de Biologia no Ceará</h1>
+  <nav>
+    <ul>
+      <li><a href="#ufc">UFC</a></li>
+      <li><a href="#ufca">UFCA</a></li>
+      <li><a href="#unifor">Unifor</a></li>
+      <li><a href="#urca">URCA</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- UFC -->
+<section id="ufc">
+  <h2>Universidade Federal do Ceará (UFC)</h2>
+  <div class="carousel" id="carousel-ufc">
+    <img src="https://th.bing.com/th/id/OIP.eXRbBwIJYlxkUxv_cjQzPwHaFC?w=276&h=189&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" class="active" alt="UFC">
+    <img src="https://th.bing.com/th/id/OIP.jLijcTqVu20jxqDpL4EHlgHaE5?w=264&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="Campus UFC">
+    <img src="https://th.bing.com/th/id/OIP.RJLWYU197SiZ-7duwVOU6QHaE7?w=297&h=197&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="Campus UFC">
+    <button class="prev" onclick="prevSlide('carousel-ufc')">&#10094;</button>
+    <button class="next" onclick="nextSlide('carousel-ufc')">&#10095;</button>
+  </div>
+  <div class="curiosidade-box">
+    <p>O curso de Ciências Biológicas da UFC completou 50 anos em 2023!</p>
+    <a href="javascript:void(0)" onclick="mostrarInfo('info-ufc')">Saiba mais</a>
+  </div>
+  <div class="info-secao" id="info-ufc">
+    <p><strong>Histórico:</strong> Criada em 1955, localizada em Fortaleza, com cursos de Licenciatura e Bacharelado em Biologia.</p>
+    <p><strong>Salário Médio:</strong> R$ 4.390,29/mês</p>
+    <p><strong>Probabilidade de Aprovação em Concursos:</strong> Alta</p>
+    <p><strong>Habilidades:</strong> Observação crítica, análise de dados, comunicação científica, trabalho em equipe.</p>
+    <button onclick="fecharInfo('info-ufc')">Fechar</button>
+  </div>
+</section>
+
+<!-- UFCA -->
+<section id="ufca">
+  <h2>Universidade Federal do Cariri (UFCA)</h2>
+  <div class="carousel" id="carousel-ufca">
+    <img src="https://international.ufca.edu.br/wp-content/uploads/sites/133/2022/11/CCAB-Agronomia-05-scaled.jpg" class="active" alt="UFCA">
+    <img src="https://www.opiniaoce.com.br/wp-content/uploads/2024/09/no-crato-mec-anuncia-investimento-para-a-construcao-do-hospital-veterinario-da-ufca-.jpeg" alt="Campus UFCA">
+    <img src="https://th.bing.com/th/id/OIP.nNzV04W3mhSmiLKhNFdosAHaFk?w=233&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpeg" alt="Campus UFCA">
+    <button class="prev" onclick="prevSlide('carousel-ufca')">&#10094;</button>
+    <button class="next" onclick="nextSlide('carousel-ufca')">&#10095;</button>
+  </div>
+  <div class="curiosidade-box">
+    <p>A UFCA oferece dois diplomas: Licenciatura e Bacharelado em Biologia.</p>
+    <a href="javascript:void(0)" onclick="mostrarInfo('info-ufca')">Saiba mais</a>
+  </div>
+  <div class="info-secao" id="info-ufca">
+    <p><strong>Histórico:</strong> Instituída em 2013, com campi em Juazeiro do Norte e Crato.</p>
+    <p><strong>Salário Médio:</strong> R$ 3.900,00/mês</p>
+    <p><strong>Probabilidade de Aprovação em Concursos:</strong> Média</p>
+    <p><strong>Habilidades:</strong> Pesquisa científica, coleta de dados, habilidades laboratoriais, análise ambiental.</p>
+    <button onclick="fecharInfo('info-ufca')">Fechar</button>
+  </div>
+</section>
+
+<!-- Unifor -->
+<section id="unifor">
+  <h2>Universidade de Fortaleza (Unifor)</h2>
+  <div class="carousel" id="carousel-unifor">
+    <img src="https://th.bing.com/th/id/OIP.zlYrmGhdg3f2KS1oGjaAlgHaEK?w=296&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" class="active" alt="Unifor">
+    <img src="https://th.bing.com/th/id/OIP.8-MoAGMmrMpQDW0iUkQt9gHaFG?w=240&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="Campus Unifor">
+    <img src="https://th.bing.com/th/id/OIP.EsBBGE_1FaknYMAzddkL2wHaEK?w=296&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="Campus Unifor">
+    <button class="prev" onclick="prevSlide('carousel-unifor')">&#10094;</button>
+    <button class="next" onclick="nextSlide('carousel-unifor')">&#10095;</button>
+  </div>
+  <div class="curiosidade-box">
+    <p>O Nubex atua em pesquisa, inovação e desenvolvimento em saúde, alimentos e educação.</p>
+    <a href="javascript:void(0)" onclick="mostrarInfo('info-unifor')">Saiba mais</a>
+  </div>
+  <div class="info-secao" id="info-unifor">
+    <p><strong>Histórico:</strong> Criada em 1973, referência em ensino privado de Biologia no Nordeste.</p>
+    <p><strong>Salário Médio:</strong> R$ 4.200,00/mês</p>
+    <p><strong>Probabilidade de Aprovação em Concursos:</strong> Média</p>
+    <p><strong>Habilidades:</strong> Gestão de laboratórios, pesquisa aplicada, comunicação científica, inovação tecnológica.</p>
+    <button onclick="fecharInfo('info-unifor')">Fechar</button>
+  </div>
+</section>
+
+<!-- URCA -->
+<section id="urca">
+  <h2>Universidade Regional do Cariri (URCA)</h2>
+  <div class="carousel" id="carousel-urca">
+    <img src="https://th.bing.com/th/id/OIP.ZW66ms7QixQB4N2OMIbfqQHaE8?w=270&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7.jpg" class="active" alt="URCA">
+    <img src="https://th.bing.com/th/id/OIP.L_xpQ86jJJYJO5yVOtY2RwHaIC?w=163&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="URCA">
+    <img src="https://th.bing.com/th/id/OIP.3fwJOEDmZi0bwPs1brI5dAHaFj?w=197&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="Laboratório URCA">
+    <button class="prev" onclick="prevSlide('carousel-urca')">&#10094;</button>
+    <button class="next" onclick="nextSlide('carousel-urca')">&#10095;</button>
+  </div>
+  <div class="curiosidade-box">
+    <p>A URCA realiza pesquisas voltadas para o semiárido e conservação ambiental.</p>
+    <a href="javascript:void(0)" onclick="mostrarInfo('info-urca')">Saiba mais</a>
+  </div>
+  <div class="info-secao" id="info-urca">
+    <p><strong>Histórico:</strong> Criada em 1986, sede no Crato, destacando-se em Biologia ambiental.</p>
+    <p><strong>Salário Médio:</strong> R$ 3.800,00/mês</p>
+    <p><strong>Probabilidade de Aprovação em Concursos:</strong> Média</p>
+    <p><strong>Habilidades:</strong> Educação ambiental, pesquisa no semiárido, monitoramento ecológico, coleta de dados de campo.</p>
+    <button onclick="fecharInfo('info-urca')">Fechar</button>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Faculdades de Biologia no Ceará
+</footer>
+
+<script>
+  function mostrarInfo(id) {document.getElementById(id).classList.add('active');}
+  function fecharInfo(id) {document.getElementById(id).classList.remove('active');}
+
+  const carousels = ['carousel-ufc','carousel-ufca','carousel-unifor','carousel-urca'];
+  const index = { 'carousel-ufc':0, 'carousel-ufca':0, 'carousel-unifor':0, 'carousel-urca':0 };
+
+  function showSlide(id) {
+    const carousel = document.getElementById(id);
+    const slides = carousel.getElementsByTagName('img');
+    for(let i=0;i<slides.length;i++){slides[i].classList.remove('active');}
+    slides[index[id]].classList.add('active');
+  }
+
+  function prevSlide(id){
+    const carousel = document.getElementById(id);
+    const slides = carousel.getElementsByTagName('img');
+    index[id] = (index[id]-1+slides.length)%slides.length;
+    showSlide(id);
+  }
+  function nextSlide(id){
+    const carousel = document.getElementById(id);
+    const slides = carousel.getElementsByTagName('img');
+    index[id] = (index[id]+1)%slides.length;
+    showSlide(id);
+  }
+</script>
+
+</body>
+</html>
